@@ -184,7 +184,7 @@ def get_attribute_reduction(data, label):
         purity = [round(ball.purity, 3) for ball in gb_division]  # get the purity of the divided granular balls
 
         # if sum(purity) == len(purity):  # if the ith attribute can be reduced
-        if statistics.mean(purity) ==1:
+        if statistics.mean(purity) >=0.95 :
             # Recreate the new list granular balls with attributes after the reduction
             # step 1.
             granular_balls = GBList(np.hstack((data[:, attributes_reduction], data[:, -2:])), original_gb=True)
