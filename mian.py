@@ -34,7 +34,7 @@ if __name__ == "__main__":
     for name in dataset:
         path = r'data\\' + name + '.csv'
         sys.stdout = Logger(r'Optimal_Result/' + name + '.txt')
-        model = CFS_gbnrs #CFS_hnrs #
+        model = CFS_hnrs #CFS_gbnrs #
         result = model.cfs(path, name)
         temp_len = len(result)
         init_data_ratio = [0.3]
